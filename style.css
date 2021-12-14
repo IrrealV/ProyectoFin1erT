@@ -4,6 +4,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 /* Reseteo Estilos navegador */
 
@@ -27,6 +28,7 @@
 
 body{
     height: 2000px;
+    background-color: #507595;
 }
 
 
