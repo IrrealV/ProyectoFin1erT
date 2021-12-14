@@ -5,10 +5,16 @@
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    color: black;
 }
 /* Reseteo Estilos navegador */
 
 /*Estilos generales*/
+main{
+    background-color: #CCE6F4;
+    padding-bottom: 2%;
+    
+}
 
 
 /*Barra de navegacion*/
@@ -26,10 +32,6 @@
     display:none;
 }
 
-body{
-    height: 2000px;
-    background-color: #507595;
-}
 
 
 
@@ -40,22 +42,56 @@ body{
 }
 
 
-#list-nav li a{
-    color: black;
-}
+
 
 nav label{
     display: none;
 }
 
-nav label img:hover {
-    cursor: pointer;
-    background: rgba(0,0,0,0.3);
-    padding: 2%;
-    margin-top: 10px;
-}
 
 /*Barra de navegacion*/
+
+
+
+/*Sliders*/
+.carrusel{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    height: fit-content;
+}
+
+
+.carrusel ul{
+    display: flex;
+    padding: 0;
+    width: 200%;
+
+    animation: carrusel 10s infinite alternate;
+}
+
+
+.carrusel li{
+    width: 100%;
+}
+
+
+.carrusel img{
+    width: 50%;
+    height: 400px;
+}
+
+
+@keyframes carrusel {
+    0%{margin-left: 0;}
+    45%{margin-left: 0;}
+
+    50%{margin-left: -100%;}
+    100%{margin-left: -100%;}
+}
+/*Sliders*/
+
 
 
 
@@ -65,7 +101,15 @@ nav label img:hover {
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.99px) { 
-
+    body{
+        height: 1900px;
+    }
+    nav label img:hover {
+        cursor: pointer;
+        background: rgba(0,0,0,0.3);
+        padding: 2%;
+        margin-top: 10px;
+    }
     /*Altura*/
      @media (min-height: 560px) {
         footer{
@@ -105,10 +149,16 @@ nav label img:hover {
     #navbar:checked ~ #list-nav ul{
         margin-left: -15.5%;
         display: block;
-        background-color: #507595;
         padding: 5%;
         width: 125px;
+        background-color: #507595;
     }
+
+    #navbar:checked ~ #list-nav li:hover {
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+    }
+
 
     header nav{
         background-color: #507595;
@@ -122,13 +172,24 @@ nav label img:hover {
     #list-nav ul{
         display: flex;
         flex-flow: column;
-        margin-left: -200%;
-        transition: all 0.5s;
+        margin-left: -300%;
+        transition:all 0.5s;
     }
 
     #list-nav li{
         padding: 5%;
+        text-align: center;
+        margin: 3%;
+        border-radius: 10px;
+        
     }
+
+    #navbar:checked ~ #list-nav li{
+        background-color: #CCE6F4;
+        border: 1px solid black;
+
+    }
+
 
     #icono img{
         width: 150px;
@@ -155,10 +216,7 @@ nav label img:hover {
     /* NavBar Header */
 
     /* main */
-        main{
-            background-color: #CCE6F4;
-            
-        }
+        
         .intro{
             padding:25px;
         }
@@ -172,52 +230,24 @@ nav label img:hover {
         }
 
         .card{
-            background-color: #F6AE2D;
+            background-color: #F6CA83;
             margin: 25px;
             padding: 25px;
+            border-radius: 20px;
         }
 
-        .card h3{
-
-        }
-
-        /*Sliders*/
-        .carrusel{
-            width: 95%;
-            margin: auto;
-            text-align: center;
-            overflow: hidden;
-            height: fit-content;
-        }
-
-
-        .carrusel ul{
-            display: flex;
-            padding: 0;
-            width: 200%;
-
-            animation: carrusel 10s infinite alternate;
-        }
-
-
-        .carrusel li{
+        .card h2{
+            font-size: 23px;
+            margin-bottom: 25px;
             width: 100%;
-        }
-
-
-        .carrusel img{
-            width: 100%;
-            height: 200px;
+            
         }
         
-        @keyframes carrusel {
-            0%{margin-left: 0;}
-            45%{margin-left: 0;}
-
-            50%{margin-left: -100%;}
-            100%{margin-left: -100%;}
+        .carrusel img{
+            width: 100%;
+            height: 250px;
         }
-        /*Sliders*/
+        
 
     /* main */
 
@@ -259,23 +289,602 @@ nav label img:hover {
 }
 
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px){
+@media (max-width: 767px){
+    body{
+        height: 1900px;
+    }
+    nav label img:hover {
+        cursor: pointer;
+        background: rgba(0,0,0,0.3);
+        padding: 2%;
+        margin-top: 10px;
+    }
+    /*Altura*/
+     @media (min-height: 560px) {
+        footer{
+            top: 88%;
+        }
+    }
+
+
+    @media (min-height: 635px) {
+        footer{
+            top: 89.5%;
+        }
+    }
+
+    @media (min-height: 730px) {
+        footer{
+            top: 90.5%;
+        }
+    }
+
+
+    @media (min-height: 810px) {
+        footer{
+            top: 91%;
+        }
+    }
+    /*Altura*/
+
+
+    /* NavBar Header */
+    header{
+        position: sticky;
+        top: -150px;
+        z-index: 3;
+    }
     
+    #navbar:checked ~ #list-nav ul{
+        margin-left: -15.5%;
+        display: block;
+        padding: 5%;
+        width: 125px;
+        background-color: #507595;
+    }
+
+    #navbar:checked ~ #list-nav li:hover {
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+    }
+
+
+    header nav{
+        background-color: #507595;
+        padding-left: 15px ;
+    }
+    
+    #list-nav{
+        position: absolute;
+    }
+
+    #list-nav ul{
+        display: flex;
+        flex-flow: column;
+        margin-left: -300%;
+        transition:all 0.5s;
+    }
+
+    #list-nav li{
+        padding: 5%;
+        text-align: center;
+        margin: 3%;
+        border-radius: 10px;
+        
+    }
+
+    #navbar:checked ~ #list-nav li{
+        background-color: #CCE6F4;
+        border: 1px solid black;
+
+    }
+
+
+    #icono img{
+        width: 150px;
+        
+        
+    }
+    nav label{    
+        display: flex;
+        flex-flow: row;
+        font-weight: bold;
+        font-size: 50px;
+        padding-bottom: 10px;
+    }
+    
+    
+    nav label img{
+        width: 30px;
+        border-radius: 5px;
+        padding: 2%;
+        margin-top: 10px;
+        margin-right: 25px;
+    }
+    
+    /* NavBar Header */
+
+    /* main */
+        
+        .intro{
+            padding:25px;
+        }
+
+        .intro h2{
+            font-size: 2em;
+            margin-bottom: 3%;
+        }
+        .intro p{
+            font-size: 25px;
+        }
+
+        .card{
+            background-color: #F6CA83;
+            margin: 25px;
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .card h2{
+            font-size: 23px;
+            margin-bottom: 25px;
+            width: 100%;
+            
+        }
+        
+        .carrusel img{
+            width: 100%;
+            height: 250px;
+        }
+        
+
+    /* main */
+
+    /* Footer NavBar */
+    footer{
+        position: fixed;
+        width: 100%;
+    }
+
+
+    footer nav{
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        width: 100%;
+        
+    }
+
+    footer nav figure{
+        background-color: #507595;
+        width: 100%;
+        padding: 1.5%;
+    }
+
+    footer nav figure:nth-child(2){
+        border-left: 2px solid black;
+        border-right: solid 2px black;
+    }
+
+    footer img{
+        width: 40px;
+        height: 40px;
+
+    }
+    footer figcaption{
+        text-align: center;
+    }
 }
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
+    #icono img{
+        width: 200px;
+    }
+
+        /* NavBar Header */
+        
+        header{
+            position: sticky;
+            top: -200px;
+        }
+        
+        #navbar:checked ~ #list-nav ul{
+            background-color: #507595;
+            display: flex;
+            justify-content: space-around;
+        }
     
+        #navbar:checked ~ #list-nav li:hover {
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+        }
+    
+    
+        header nav{
+            background-color: #507595;
+        }
+        
+    
+        #list-nav ul{
+            display: flex;
+            transition:all 0.5s;
+            display: none;
+        }
+    
+        #list-nav li{
+            text-align: center;
+            padding: 15px 20px;
+            margin-bottom: 1%;
+            border-radius: 10px;
+            
+        }
+    
+        #navbar:checked ~ #list-nav li{
+            background-color: #CCE6F4;
+            border: 1px solid black;
+    
+        }
+
+        nav label img:hover {
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            padding: 1%;
+            margin-top: 10px;
+        }
+    
+    
+        nav label{    
+            display: flex;
+            flex-flow: row;
+            font-weight: bold;
+            font-size: 50px;
+            padding-bottom: 10px;
+        }
+        
+        
+        nav label img{
+            width: 30px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        
+        /* NavBar Header */
+        /* main */
+        .card{
+            background-color: #F6CA83;
+            margin: 3% auto;
+            padding: 25px;
+            border-radius: 20px;
+            width: 50%;
+        }
+
+        .card h2{
+            font-size: 23px;
+            margin-bottom: 25px;
+            width: 100%;
+            
+        }
+        
+        .carrusel img{
+            width: 100%;
+            height: 250px;
+        }
+        .intro{
+            padding:25px;
+            text-align: center;
+        }
+
+        .intro h2{
+            font-size: 2em;
+            margin-bottom: 3%;
+        }
+        .intro p{
+            font-size: 25px;
+        }
+
+        /* main */
+
+
+        /* Footer NavBar */
+    footer{
+        background-color: #507595;
+        position: static;
+    }
+
+    #contacto{
+        display: flex;
+        align-items: baseline;
+    }
+    #contacto p {
+        margin: 25px;
+    }
+
+    footer nav{
+        display: none;
+    }
+
+    footer img{
+        width: 25px;
+    }
+    /* Footer NavBar */  
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-   
-}
+    /* #icono img{
+        width: 200px;
+    }
 
+        /* NavBar Header */
+        
+        header{
+            position: sticky;
+            top: -200px;
+        }
+        
+        #navbar:checked ~ #list-nav ul{
+            background-color: #507595;
+            display: flex;
+            justify-content: space-around;
+        }
+    
+        #navbar:checked ~ #list-nav li:hover {
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+        }
+    
+    
+        header nav{
+            background-color: #507595;
+        }
+        
+    
+        #list-nav ul{
+            display: flex;
+            transition:all 0.5s;
+            display: none;
+        }
+    
+        #list-nav li{
+            text-align: center;
+            padding: 15px 20px;
+            margin-bottom: 1%;
+            border-radius: 10px;
+            
+        }
+    
+        #navbar:checked ~ #list-nav li{
+            background-color: #CCE6F4;
+            border: 1px solid black;
+    
+        }
+
+        nav label img:hover {
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            padding: 1%;
+            margin-top: 10px;
+        }
+    
+    
+        nav label{    
+            display: flex;
+            flex-flow: row;
+            font-weight: bold;
+            font-size: 50px;
+            padding-bottom: 10px;
+        }
+        
+        
+        nav label img{
+            width: 30px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        
+        /* NavBar Header */
+        /* main */
+        .card{
+            background-color: #F6CA83;
+            margin: 3% auto;
+            padding: 25px;
+            border-radius: 20px;
+            width: 50%;
+        }
+
+        .card h2{
+            font-size: 23px;
+            margin-bottom: 25px;
+            width: 100%;
+            
+        }
+        
+        .carrusel img{
+            width: 100%;
+            height: 250px;
+        }
+        .intro{
+            padding:25px;
+            text-align: center;
+        }
+
+        .intro h2{
+            font-size: 2em;
+            margin-bottom: 3%;
+        }
+        .intro p{
+            font-size: 25px;
+        }
+
+        /* main */
+
+
+        /* Footer NavBar */
+    footer{
+        background-color: #507595;
+
+    }
+
+    #contacto{
+        display: flex;
+        align-items: baseline;
+    }
+    #contacto p {
+        margin: 25px;
+    }
+
+    footer nav{
+        display: none;
+    }
+
+    footer img{
+        width: 25px;
+    }
+    /* Footer NavBar */
+} 
+ 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
+    #icono img{
+        width: 200px;
+    }
+
+        /* NavBar Header */
+        
+        header{
+            position: sticky;
+            top: -200px;
+        }
+        
+        #navbar:checked ~ #list-nav ul{
+            background-color: #507595;
+            display: flex;
+            justify-content: space-around;
+        }
     
+        #navbar:checked ~ #list-nav li:hover {
+            background-color: rgba(0,0,0,0.3);
+            color: white;
+        }
+    
+    
+        header nav{
+            background-color: #507595;
+        }
+        
+    
+        #list-nav ul{
+            display: flex;
+            transition:all 0.5s;
+            display: none;
+        }
+    
+        #list-nav li{
+            text-align: center;
+            padding: 15px 20px;
+            margin-bottom: 1%;
+            border-radius: 10px;
+            
+        }
+    
+        #navbar:checked ~ #list-nav li{
+            background-color: #CCE6F4;
+            border: 1px solid black;
+    
+        }
+
+        nav label img:hover {
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            padding: 1%;
+            margin-top: 10px;
+        }
+    
+    
+        nav label{    
+            display: flex;
+            flex-flow: row;
+            font-weight: bold;
+            font-size: 50px;
+            padding-bottom: 10px;
+        }
+        
+        
+        nav label img{
+            width: 30px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        
+        /* NavBar Header */
+        /* main */
+        .card{
+            background-color: #F6CA83;
+            margin: 3% auto;
+            padding: 25px;
+            border-radius: 20px;
+            width: 50%;
+        }
+
+        .card h2{
+            font-size: 23px;
+            margin-bottom: 25px;
+            width: 100%;
+            
+        }
+        
+        .carrusel img{
+            width: 100%;
+            height: 250px;
+        }
+        .intro{
+            padding:25px;
+            text-align: center;
+        }
+
+        .intro h2{
+            font-size: 2em;
+            margin-bottom: 3%;
+        }
+        .intro p{
+            font-size: 25px;
+        }
+
+        /* main */
+
+
+        /* Footer NavBar */
+    footer{
+        background-color: #507595;
+
+    }
+
+    #contacto{
+        display: flex;
+        align-items: baseline;
+    }
+    #contacto p {
+        margin: 25px;
+    }
+
+    footer nav{
+        display: none;
+    }
+
+    footer img{
+        width: 25px;
+    }
+    /* Footer NavBar */
+
+
+
 }
 
 /*Media Query*/
